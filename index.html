@@ -1,0 +1,834 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>document.documentElement.classList.add('js')</script>
+<title>Nail &amp; Beauty Atelier, nail studio in Brighton</title>
+<meta name="description" content="Winnie’s home nail studio on Montpelier Terrace, Brighton. BIAB, gel, acrylic and hard gel extensions, nail art. 5.0 from 106 Google reviews.">
+<meta property="og:title" content="Nail &amp; Beauty Atelier, nail studio in Brighton">
+<meta property="og:description" content="Winnie’s home nail studio on Montpelier Terrace. BIAB, gel, extensions and hand-painted nail art. Open daily 9 am–8 pm.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#7B1D25">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%237B1D25'/%3E%3Cpath d='M32 10c9 0 15 8 15 20v20a4 4 0 0 1-4 4H21a4 4 0 0 1-4-4V30c0-12 6-20 15-20z' fill='%23F7EFE9'/%3E%3Cpath d='M26 20c2-3 4-4 6-4' stroke='%237B1D25' stroke-width='3' stroke-linecap='round' fill='none'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NailSalon",
+  "name": "Nail & Beauty Atelier",
+  "image": "assets/photos/photo-01.jpg",
+  "telephone": "+447922999339",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Flat 23, Heather Court, 15 Montpelier Terrace",
+    "addressLocality": "Brighton",
+    "addressRegion": "Brighton and Hove",
+    "postalCode": "BN1 3DS",
+    "addressCountry": "GB"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 50.825699099999994, "longitude": -0.1509782 },
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "09:00",
+    "closes": "20:00"
+  }],
+  "hasMap": "https://www.google.com/maps/place/?q=place_id:ChIJBd18lmqFdUgRVuks03sJ2UM",
+  "knowsLanguage": ["en", "zh"]
+}
+</script>
+<style>
+/* ==========================================================================
+   DESIGN DECISIONS: Nail & Beauty Atelier, Brighton
+   Direction: SOFT BEAUTY, fully committed. Nude porcelain paper, one oxblood
+     move, slow gentle motion, and one recurring shape: the arch of a
+     nail (rounded top, soft square base) masks every photograph.
+   Palette, from the photos: --bg porcelain nude (the pale studio board and
+     towels behind every set), --brand oxblood (photo-01, the hero set),
+     --accent blush (the French pinks of photo-07/14), --ink a deep
+     brown-plum rather than black so the page stays warm.
+   Type: Fraunces 300 (roman + italic) for display: soft, high-contrast,
+     editorial; Jost 400/500 as the quiet geometric companion. Display:body
+     ratio is ~1:8 on the hero.
+   Hero: typographic poster. "Detail, by Winnie." (the thing five reviewers
+     independently praise) set huge, with the oxblood set inside a nail arch
+     that overlaps the title, and a rating panel overlapping the photo.
+   Rhythm: poster hero → oxblood proof band with giant 5.0 + quote rail →
+     sticky-side price list → signature "shade rail" of nail-arch photos on
+     oxblood → editorial studio spread with numbered facts → hours + map
+     split → big-type contact rows → quiet footer.
+   ========================================================================== */
+:root{
+  --bg:#F7EFE9; --surface:#EFE2D8; --ink:#2B1719; --ink-soft:#6A5250;
+  --brand:#7B1D25; --brand-ink:#FAF1EC; --accent:#E8BFB5; --line:rgba(43,23,25,.14);
+  --line-inv:rgba(250,241,236,.22);
+
+  --step--1:clamp(.9375rem,.9rem + .15vw,1rem);
+  --step-0:clamp(1.0625rem,1rem + .25vw,1.1875rem);
+  --step-1:clamp(1.25rem,1.15rem + .5vw,1.5rem);
+  --step-2:clamp(1.5rem,1.3rem + 1vw,2.125rem);
+  --step-3:clamp(1.95rem,1.5rem + 2.1vw,3.1rem);
+  --step-4:clamp(2.5rem,1.8rem + 3.4vw,4.6rem);
+  --step-5:clamp(3.25rem,2rem + 6.5vw,7rem);
+  --step-6:clamp(4.25rem,1.6rem + 13vw,9rem);
+
+  --space-1:4px; --space-2:8px; --space-3:12px; --space-4:16px; --space-5:24px;
+  --space-6:32px; --space-7:48px; --space-8:64px; --space-9:96px; --space-10:128px;
+  --section:clamp(64px,12vw,160px);
+  --gutter:clamp(20px,5vw,48px);
+
+  --r-1:14px; --r-pill:999px;
+  --arch:999px 999px var(--r-1) var(--r-1);
+
+  --ease-out:cubic-bezier(.16,1,.3,1); --ease-in-out:cubic-bezier(.65,0,.35,1);
+  --dur-1:180ms; --dur-2:400ms; --dur-3:800ms;
+  --font-display:"Fraunces",ui-serif,Georgia,serif;
+  --font-body:"Jost",ui-sans-serif,system-ui,sans-serif;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 var(--step-0)/1.6 var(--font-body);
+  -webkit-font-smoothing:antialiased;overflow-x:clip}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3{font-family:var(--font-display);font-weight:300;margin:0;line-height:1.02;letter-spacing:-.02em;text-wrap:balance;font-optical-sizing:auto}
+p{margin:0;text-wrap:pretty}
+em{font-style:italic}
+::selection{background:var(--brand);color:var(--brand-ink)}
+:focus-visible{outline:2px solid var(--brand);outline-offset:3px;border-radius:6px}
+.inv :focus-visible{outline-color:var(--brand-ink)}
+.skip{position:absolute;left:var(--space-4);top:-100px;z-index:100;background:var(--ink);color:var(--bg);padding:var(--space-3) var(--space-4);border-radius:var(--r-1)}
+.skip:focus{top:var(--space-4)}
+.vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+.wrap{width:100%;max-width:1280px;margin-inline:auto;padding-inline:var(--gutter)}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));column-gap:var(--space-4)}
+@media (min-width:960px){.grid{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--space-5)}}
+
+.eyebrow{font:500 var(--step--1)/1.3 var(--font-body);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);display:flex;gap:var(--space-3);align-items:center}
+.eyebrow b{font-weight:500;color:var(--brand)}
+.inv .eyebrow{color:rgba(250,241,236,.78)}
+.inv .eyebrow b{color:var(--accent)}
+
+.ulink{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.28em;text-decoration-color:currentColor;transition:text-decoration-color var(--dur-1)}
+@media (hover:hover){
+  .draw{text-decoration:none;background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size var(--dur-2) var(--ease-out)}
+  .draw:hover{background-size:100% 1px}
+}
+
+/* Buttons */
+.btn{--h:52px;display:inline-flex;align-items:center;justify-content:center;gap:var(--space-3);min-height:var(--h);padding:0 var(--space-5);
+  border-radius:var(--r-pill);font:500 var(--step--1)/1 var(--font-body);letter-spacing:.06em;text-decoration:none;
+  border:1px solid transparent;transition:transform var(--dur-1) var(--ease-out),background-color var(--dur-2) var(--ease-out),color var(--dur-2) var(--ease-out),border-color var(--dur-2)}
+.btn svg{width:18px;height:18px;flex:none;transition:transform var(--dur-2) var(--ease-out)}
+.btn--solid{background:var(--brand);color:var(--brand-ink)}
+.btn--ghost{border-color:currentColor;color:var(--ink)}
+.btn:active{transform:scale(.97)}
+@media (hover:hover){
+  .btn--solid:hover{background:var(--ink)}
+  .btn--ghost:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+  .btn:hover svg{transform:translate(2px,-2px)}
+}
+.ico{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+
+/* ---------- Header ---------- */
+.hdr{position:fixed;inset:0 0 auto;z-index:50;transition:background-color var(--dur-2),box-shadow var(--dur-2)}
+.hdr__in{display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);height:72px;transition:height var(--dur-2) var(--ease-out)}
+.hdr.is-scrolled{background:var(--bg);box-shadow:0 1px 0 var(--line)}
+.hdr.is-scrolled .hdr__in{height:58px}
+.mark{display:flex;flex-direction:column;text-decoration:none;line-height:1;min-height:44px;justify-content:center}
+.mark__top{font:500 11px/1 var(--font-body);letter-spacing:.24em;text-transform:uppercase;color:var(--ink-soft);transition:opacity var(--dur-2),max-height var(--dur-2);max-height:14px;overflow:hidden;margin-bottom:4px}
+.mark__name{font:300 italic 1.6rem/1 var(--font-display);letter-spacing:-.01em;transition:font-size var(--dur-2) var(--ease-out)}
+.hdr.is-scrolled .mark__top{opacity:0;max-height:0;margin:0}
+.hdr.is-scrolled .mark__name{font-size:1.35rem}
+.nav{display:none}
+.hdr__cta{display:none}
+.menu-btn{display:inline-flex;align-items:center;gap:var(--space-2);min-height:44px;min-width:44px;padding:0 var(--space-3);margin-right:calc(var(--space-3) * -1);
+  background:none;border:0;color:var(--ink);font:500 var(--step--1)/1 var(--font-body);letter-spacing:.12em;text-transform:uppercase;cursor:pointer}
+.menu-btn .bars{position:relative;width:22px;height:10px}
+.menu-btn .bars::before,.menu-btn .bars::after{content:"";position:absolute;left:0;right:0;height:1.5px;background:currentColor;transition:transform var(--dur-2) var(--ease-out),top var(--dur-2) var(--ease-out)}
+.menu-btn .bars::before{top:0}.menu-btn .bars::after{top:8.5px}
+.menu-btn[aria-expanded="true"] .bars::before{top:4.25px;transform:rotate(45deg)}
+.menu-btn[aria-expanded="true"] .bars::after{top:4.25px;transform:rotate(-45deg)}
+@media (min-width:960px){
+  .menu-btn{display:none}
+  .nav{display:flex;gap:var(--space-6)}
+  .nav a{font:500 var(--step--1)/1 var(--font-body);letter-spacing:.06em;text-decoration:none;padding:var(--space-3) 0}
+  .hdr__cta{display:inline-flex;--h:46px}
+}
+
+.menu{position:fixed;inset:0;z-index:40;background:var(--bg);padding:110px var(--gutter) calc(var(--space-8) + env(safe-area-inset-bottom));
+  display:flex;flex-direction:column;justify-content:space-between;visibility:hidden;opacity:0;transition:opacity var(--dur-2) var(--ease-out),visibility 0s linear var(--dur-2)}
+.menu.is-open{visibility:visible;opacity:1;transition:opacity var(--dur-2) var(--ease-out)}
+.menu ol{list-style:none;margin:0;padding:0;counter-reset:m}
+.menu li{counter-increment:m;border-bottom:1px solid var(--line);overflow:hidden}
+.menu li a{display:flex;align-items:baseline;gap:var(--space-4);padding:var(--space-3) 0;font:300 var(--step-4)/1.1 var(--font-display);text-decoration:none;letter-spacing:-.02em;
+  transform:translateY(105%);transition:transform var(--dur-3) var(--ease-out)}
+.menu li a::before{content:"0" counter(m);font:500 12px/1 var(--font-body);letter-spacing:.14em;color:var(--brand)}
+.menu.is-open li a{transform:none}
+.menu.is-open li:nth-child(2) a{transition-delay:60ms}.menu.is-open li:nth-child(3) a{transition-delay:120ms}
+.menu.is-open li:nth-child(4) a{transition-delay:180ms}.menu.is-open li:nth-child(5) a{transition-delay:240ms}
+.menu__foot{display:grid;gap:var(--space-3);font-size:var(--step--1);color:var(--ink-soft)}
+body.is-locked{overflow:hidden}
+
+/* ---------- Hero ---------- */
+.hero{padding-top:calc(72px + var(--space-6));padding-bottom:var(--section);min-height:100svh;position:relative}
+.hero__grid{row-gap:var(--space-5);align-items:end}
+.hero__kicker{grid-column:1/-1;flex-wrap:wrap;row-gap:var(--space-1);letter-spacing:.14em}
+.hero__title{grid-column:1/-1;font-size:var(--step-6);line-height:.92;letter-spacing:-.035em;position:relative;z-index:2}
+.hero__title .line{display:block;overflow:hidden;padding-bottom:.22em;margin-bottom:-.22em}
+.hero__title .line>span{display:block}
+.hero__title em{color:var(--brand);padding-left:.5em}
+.hero__media{grid-column:2/-1;margin:calc(var(--space-7) * -1) 0 0;position:relative;z-index:1}
+.hero__frame{border-radius:var(--arch);overflow:hidden;aspect-ratio:4/5;background:var(--surface)}
+.hero__frame img{width:100%;height:100%;object-fit:cover;object-position:52% 60%}
+.hero__badge{position:absolute;left:calc(-25% - var(--space-3));bottom:var(--space-5);z-index:3;background:var(--bg);padding:var(--space-4) var(--space-4) var(--space-3);border-radius:var(--r-1);
+  text-decoration:none;display:grid;gap:2px;min-width:150px}
+.hero__badge .num{font:300 2.75rem/1 var(--font-display);letter-spacing:-.03em}
+.stars{color:var(--brand);letter-spacing:.12em;font-size:.95rem}
+.hero__badge small{font-size:var(--step--1);color:var(--ink-soft);line-height:1.35}
+.hero__body{grid-column:1/-1;display:grid;gap:var(--space-5);margin-top:var(--space-4)}
+.hero__lede{font-size:var(--step-1);line-height:1.45;max-width:34ch}
+.hero__cta{display:flex;flex-wrap:wrap;gap:var(--space-3)}
+.hero__cta .btn{padding:0 var(--space-4)}
+@media (min-width:640px){.hero__cta .btn{padding:0 var(--space-5)}}
+.status{display:inline-flex;align-items:center;gap:var(--space-2);font:500 var(--step--1)/1.3 var(--font-body);letter-spacing:.04em}
+.status::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--ink-soft);flex:none}
+.status.is-open::before{background:#2F7A4F;box-shadow:0 0 0 4px rgba(47,122,79,.16)}
+.status.is-closed::before{background:var(--brand)}
+@media (min-width:640px){
+  .hero__media{grid-column:2/-1}
+  .hero__badge{left:calc(-33% - var(--space-4))}
+}
+@media (min-width:960px){
+  .hero{padding-top:calc(72px + var(--space-8))}
+  .hero__grid{grid-template-rows:auto auto 1fr}
+  .hero__kicker{grid-column:1/8}
+  .hero__title{grid-column:1/9;grid-row:2;align-self:start;margin-top:var(--space-6)}
+  .hero__media{grid-column:8/13;grid-row:1/4;margin:0;align-self:start}
+  .hero__frame{aspect-ratio:4/5.2}
+  .hero__badge{left:calc(var(--space-8) * -1);bottom:var(--space-7);padding:var(--space-5)}
+  .hero__body{grid-column:1/7;grid-row:3;align-self:end;margin:0}
+}
+
+/* ---------- Proof ---------- */
+.proof{background:var(--brand);color:var(--brand-ink);padding-block:var(--section);position:relative;overflow:hidden}
+.proof__head{row-gap:var(--space-6);align-items:end}
+.proof__score{grid-column:1/-1;display:flex;align-items:flex-end;gap:var(--space-5)}
+.proof__big{font:300 clamp(7rem,38vw,17rem)/.78 var(--font-display);letter-spacing:-.05em}
+.proof__meta{display:grid;gap:var(--space-2);padding-bottom:var(--space-3)}
+.proof__meta .stars{color:var(--accent);font-size:1.15rem}
+.proof__meta p{font-size:var(--step--1);line-height:1.4;color:rgba(250,241,236,.82)}
+.proof__quote{grid-column:1/-1;margin:0}
+.proof__quote blockquote{margin:0;font:300 italic var(--step-3)/1.15 var(--font-display);letter-spacing:-.015em;text-wrap:balance}
+.proof__quote figcaption{margin-top:var(--space-5);font-size:var(--step--1);letter-spacing:.08em;color:rgba(250,241,236,.78)}
+.proof__link{grid-column:1/-1}
+.proof .ulink{font-weight:500}
+@media (min-width:960px){
+  .proof__score{grid-column:1/6;grid-row:1/3;align-self:start;flex-direction:column;align-items:flex-start}
+  .proof__quote{grid-column:6/13;grid-row:1}
+  .proof__link{grid-column:6/13;grid-row:2}
+}
+
+.rail{display:flex;gap:var(--space-4);overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:var(--gutter);padding:0 var(--gutter) var(--space-5);
+  margin-top:var(--space-8);scrollbar-width:none;overscroll-behavior-x:contain}
+.rail::-webkit-scrollbar{display:none}
+.rail>*{scroll-snap-align:start;flex:0 0 auto}
+@media (min-width:1280px){.rail{padding-inline:calc((100vw - 1280px)/2 + var(--gutter));scroll-padding-inline:calc((100vw - 1280px)/2 + var(--gutter))}}
+
+.review{width:min(78vw,380px);border-top:1px solid var(--line-inv);padding-top:var(--space-5);display:flex;flex-direction:column;gap:var(--space-4)}
+.review .stars{color:var(--accent)}
+.review blockquote{margin:0;font-size:var(--step-0);line-height:1.6}
+.review cite{margin-top:auto;font-style:normal;font-size:var(--step--1);letter-spacing:.1em;text-transform:uppercase;color:rgba(250,241,236,.78)}
+
+@media (min-width:960px){
+  .proof .rail{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:var(--space-7);row-gap:var(--space-8);overflow:visible;
+    max-width:1280px;margin-inline:auto;padding:0 var(--gutter)}
+  .proof .review{width:auto}
+  .proof .review:nth-child(3n+2){transform:translateY(var(--space-8))}
+  .js .proof .review.rv:nth-child(3n+2){transform:translateY(calc(var(--space-8) + 20px))}
+  .js .proof .review.rv.in:nth-child(3n+2){transform:translateY(var(--space-8))}
+  .proof{padding-bottom:calc(var(--section) + var(--space-8))}
+}
+
+/* ---------- Treatments ---------- */
+.menu-sec{padding-block:var(--section)}
+.menu-sec__grid{row-gap:var(--space-7)}
+.menu-sec__side{grid-column:1/-1;display:grid;gap:var(--space-5);align-content:start}
+.menu-sec__side h2{font-size:var(--step-4)}
+.menu-sec__side h2 em{color:var(--brand)}
+.menu-sec__side p{color:var(--ink-soft);max-width:44ch}
+.menu-sec__list{grid-column:1/-1;display:grid;gap:var(--space-8)}
+@media (min-width:960px){
+  .menu-sec__side{grid-column:1/6;position:sticky;top:110px}
+  .menu-sec__list{grid-column:7/13}
+}
+.group h3{font:500 var(--step--1)/1.3 var(--font-body);letter-spacing:.16em;text-transform:uppercase;color:var(--brand);display:flex;justify-content:space-between;
+  padding-bottom:var(--space-3);border-bottom:1px solid var(--ink)}
+.group ul{list-style:none;margin:0;padding:0}
+.group li{display:flex;align-items:baseline;gap:var(--space-3);padding:var(--space-4) 0;border-bottom:1px solid var(--line)}
+.group .n{font:300 var(--step-1)/1.25 var(--font-display);letter-spacing:-.01em}
+.group .dots{flex:1;min-width:var(--space-5);border-bottom:1px dotted rgba(43,23,25,.35);transform:translateY(-.3em)}
+.group .p{font:500 var(--step-0)/1 var(--font-body);white-space:nowrap;font-variant-numeric:tabular-nums}
+.group .p small{font-weight:400;font-size:var(--step--1);color:var(--ink-soft);margin-right:.25em}
+.menu-sec__note{font-size:var(--step--1);color:var(--ink-soft)}
+
+/* ---------- Shade rail (signature) ---------- */
+.shades{background:var(--ink);color:var(--brand-ink);padding-block:var(--section);overflow:hidden}
+.shades__head{row-gap:var(--space-5);align-items:end}
+.shades__head h2{grid-column:1/-1;font-size:var(--step-5);line-height:.95;letter-spacing:-.035em}
+.shades__head h2 em{color:var(--accent)}
+.shades__head p{grid-column:1/-1;color:rgba(250,241,236,.8);max-width:40ch}
+.shades__nav{display:none}
+@media (min-width:960px){
+  .shades__head h2{grid-column:1/9}
+  .shades__head p{grid-column:9/13}
+  .shades__nav{display:flex;gap:var(--space-3);grid-column:9/13;justify-content:flex-start}
+}
+.navbtn{width:52px;height:52px;border-radius:50%;border:1px solid var(--line-inv);background:none;color:inherit;display:grid;place-items:center;cursor:pointer;transition:background-color var(--dur-2),color var(--dur-2)}
+@media (hover:hover){.navbtn:hover{background:var(--brand-ink);color:var(--ink)}}
+.shade{width:min(68vw,330px);margin:0}
+.shade:nth-child(even){margin-top:var(--space-8)}
+.shade__img{border-radius:var(--arch);overflow:hidden;aspect-ratio:3/4;background:#3a2426}
+.shade__img img{width:100%;height:100%;object-fit:cover;transition:transform var(--dur-3) var(--ease-out)}
+@media (hover:hover){.shade:hover .shade__img img{transform:scale(1.03)}}
+.shade figcaption{display:flex;gap:var(--space-3);align-items:baseline;margin-top:var(--space-4);font:300 var(--step-1)/1.2 var(--font-display)}
+.shade figcaption span{font:500 12px/1 var(--font-body);letter-spacing:.16em;color:var(--accent)}
+.shades .rail{margin-top:var(--space-8)}
+
+/* ---------- Studio ---------- */
+.studio{padding-block:var(--section)}
+.studio__grid{row-gap:var(--space-7)}
+.studio__media{grid-column:1/4;position:relative;margin:0;align-self:start}
+.studio__media .frame{border-radius:var(--arch);overflow:hidden;aspect-ratio:3/4}
+.studio__media img{width:100%;height:100%;object-fit:cover;object-position:50% 45%}
+.studio__media .frame--small{position:absolute;right:-38%;bottom:-12%;width:58%;aspect-ratio:3/4;border:6px solid var(--bg);border-radius:var(--arch)}
+.studio__media .frame--small img{object-position:50% 60%}
+.studio__text{grid-column:1/-1;display:grid;gap:var(--space-5);align-content:start;margin-top:var(--space-7)}
+.studio__text h2{font-size:var(--step-4)}
+.studio__text h2 em{color:var(--brand)}
+.studio__text>p{color:var(--ink-soft);max-width:52ch}
+.studio__text q{quotes:"“" "”";color:var(--ink);font-family:var(--font-display);font-style:italic;font-size:1.08em}
+.facts{list-style:none;margin:var(--space-4) 0 0;padding:0;counter-reset:f}
+.facts li{counter-increment:f;display:grid;grid-template-columns:56px 1fr;gap:var(--space-1) var(--space-4);padding:var(--space-5) 0;border-top:1px solid var(--line)}
+.facts li::before{content:"0" counter(f);grid-row:1/3;font:300 var(--step-2)/1 var(--font-display);color:var(--brand)}
+.facts strong{font:300 var(--step-1)/1.25 var(--font-display);letter-spacing:-.01em}
+.facts span{color:var(--ink-soft);font-size:var(--step-0)}
+@media (min-width:960px){
+  .studio__media{grid-column:1/5;grid-row:1;position:sticky;top:120px}
+  .studio__text{grid-column:7/13;grid-row:1;margin:0}
+}
+
+/* ---------- Visit ---------- */
+.visit{padding-block:var(--section);background:var(--surface)}
+.visit__grid{row-gap:var(--space-7)}
+.visit__info{grid-column:1/-1;display:grid;gap:var(--space-6);align-content:start}
+.visit__info h2{font-size:var(--step-4)}
+.visit__addr{font-style:normal;font-size:var(--step-1);line-height:1.45}
+.visit__actions{display:flex;flex-wrap:wrap;gap:var(--space-3)}
+.hours{width:100%;border-collapse:collapse;font-size:var(--step-0)}
+.hours caption{text-align:left;padding-bottom:var(--space-4)}
+.hours th,.hours td{padding:var(--space-3) 0;border-bottom:1px solid var(--line);text-align:left;font-weight:400}
+.hours td{text-align:right;font-variant-numeric:tabular-nums}
+.hours tr.is-today th,.hours tr.is-today td{color:var(--brand);font-weight:500}
+.hours tr.is-today th::after{content:"Today";margin-left:var(--space-3);font:500 11px/1 var(--font-body);letter-spacing:.14em;text-transform:uppercase;
+  background:var(--brand);color:var(--brand-ink);padding:4px 8px;border-radius:var(--r-pill);vertical-align:middle}
+.visit__map{grid-column:1/-1;margin:0}
+.visit__map .mapbox{border-radius:var(--r-1);overflow:hidden;aspect-ratio:4/5;background:var(--bg);position:relative}
+.mapbox__ph{position:absolute;inset:0;display:grid;place-content:center;justify-items:center;gap:var(--space-3);text-align:center;color:var(--ink-soft);
+  background:radial-gradient(circle at 50% 46%,rgba(123,29,37,.10) 0 18%,transparent 18.2%),repeating-linear-gradient(0deg,transparent 0 47px,var(--line) 47px 48px),repeating-linear-gradient(90deg,transparent 0 47px,var(--line) 47px 48px)}
+.mapbox__ph .ico{width:32px;height:32px;color:var(--brand)}
+.mapbox__ph span{font:300 var(--step-1)/1.2 var(--font-display);color:var(--ink)}
+.visit__map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:saturate(.75) sepia(.12)}
+.visit__map figcaption{margin-top:var(--space-3);font-size:var(--step--1);color:var(--ink-soft)}
+.note{font-size:var(--step--1);color:var(--ink-soft);display:flex;gap:var(--space-3);align-items:flex-start;max-width:46ch}
+.note .ico{flex:none;margin-top:2px;color:var(--brand)}
+@media (min-width:960px){
+  .visit__info{grid-column:1/7}
+  .visit__map{grid-column:8/13}
+  .visit__map .mapbox{aspect-ratio:auto;height:100%;min-height:560px}
+  .visit__map{display:flex;flex-direction:column}
+  .visit__map .mapbox{flex:1}
+}
+
+/* ---------- Contact ---------- */
+.contact{padding-block:var(--section)}
+.contact h2{font-size:var(--step-5);line-height:.95;letter-spacing:-.035em;max-width:12ch}
+.contact h2 em{color:var(--brand)}
+.contact__rows{list-style:none;margin:var(--space-8) 0 0;padding:0;border-top:1px solid var(--ink)}
+.contact__rows a{display:grid;grid-template-columns:1fr auto;align-items:center;gap:var(--space-1) var(--space-4);padding:var(--space-5) 0;border-bottom:1px solid var(--line);text-decoration:none;
+  transition:padding var(--dur-2) var(--ease-out),color var(--dur-2)}
+.contact__rows .k{font:500 var(--step--1)/1.2 var(--font-body);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
+.contact__rows .v{grid-column:1;font:300 var(--step-3)/1.1 var(--font-display);letter-spacing:-.02em}
+.contact__rows .arr{grid-column:2;grid-row:1/3;width:52px;height:52px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;transition:background-color var(--dur-2),color var(--dur-2),transform var(--dur-2) var(--ease-out)}
+.contact__rows a:active .arr{transform:scale(.94)}
+@media (hover:hover){
+  .contact__rows a:hover{color:var(--brand);padding-left:var(--space-4)}
+  .contact__rows a:hover .arr{background:var(--brand);color:var(--brand-ink);border-color:var(--brand)}
+}
+
+@media (min-width:960px){
+  .contact__grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--space-5);align-items:end}
+  .contact__head{grid-column:1/6}
+  .contact__rows{grid-column:6/13;margin-top:0}
+}
+
+/* ---------- Footer ---------- */
+.ftr{background:var(--ink);color:rgba(250,241,236,.82);padding:var(--space-9) 0 var(--space-7);font-size:var(--step--1)}
+.ftr__grid{row-gap:var(--space-6)}
+.ftr__name{grid-column:1/-1;font:300 italic var(--step-4)/1 var(--font-display);color:var(--brand-ink);letter-spacing:-.02em}
+.ftr__col{grid-column:1/-1;display:grid;gap:var(--space-2);align-content:start}
+.ftr__col a{min-height:44px;display:inline-flex;align-items:center}
+.ftr__legal{grid-column:1/-1;border-top:1px solid var(--line-inv);padding-top:var(--space-5);display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(--space-3)}
+@media (min-width:960px){
+  .ftr__name{grid-column:1/6}
+  .ftr__col{grid-column:span 3}
+}
+
+/* ---------- Sticky action bar ---------- */
+.bar{position:fixed;inset:auto 0 0;z-index:45;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);
+  padding-bottom:env(safe-area-inset-bottom);background-color:var(--ink);transform:translateY(0);transition:transform var(--dur-2) var(--ease-out)}
+.bar a{min-height:60px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;text-decoration:none;font:500 13px/1 var(--font-body);letter-spacing:.08em;text-transform:uppercase;
+  background:var(--bg);color:var(--ink)}
+.bar a:first-child{background:var(--brand);color:var(--brand-ink)}
+.bar a:active{opacity:.8}
+.bar .ico{width:20px;height:20px}
+body{padding-bottom:calc(60px + env(safe-area-inset-bottom))}
+html.menu-open .bar{transform:translateY(110%)}
+@media (min-width:768px){.bar{display:none}body{padding-bottom:0}}
+
+/* ---------- Motion ---------- */
+.js .rv{opacity:0;transform:translateY(20px);transition:opacity var(--dur-3) var(--ease-out),transform var(--dur-3) var(--ease-out);transition-delay:calc(var(--i,0) * 80ms)}
+.js .rv.in{opacity:1;transform:none}
+.js .hdr{animation:fade var(--dur-3) var(--ease-out) both}
+.js .hero__kicker{animation:fade var(--dur-3) var(--ease-out) 120ms both}
+.js .hero__title .line>span{animation:rise 900ms var(--ease-out) both}
+.js .hero__title .line:nth-child(1)>span{animation-delay:180ms}
+.js .hero__title .line:nth-child(2)>span{animation-delay:260ms}
+.js .hero__frame{animation:unveil 1100ms var(--ease-in-out) 200ms both}
+.js .hero__frame img{animation:settle 1400ms var(--ease-out) 200ms both}
+.js .hero__badge,.js .hero__body{animation:fadeup var(--dur-3) var(--ease-out) 700ms both}
+@keyframes fade{from{opacity:0}}
+@keyframes rise{from{transform:translateY(105%)}}
+@keyframes unveil{from{clip-path:inset(100% 0 0 0)}to{clip-path:inset(0 0 0 0)}}
+@keyframes settle{from{transform:scale(1.08)}}
+@keyframes fadeup{from{opacity:0;transform:translateY(16px)}}
+@supports (animation-timeline:view()){
+  .hero__media{animation:drift linear both;animation-timeline:view();animation-range:exit 0% exit 100%}
+  @keyframes drift{to{transform:translateY(-8%)}}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .js .rv{opacity:1;transform:none}
+  .menu li a{transform:none}
+}
+</style>
+<!--sf:preview--><meta name="robots" content="noindex, nofollow"><!--/sf:preview-->
+<!--sf:og--><meta property="og:image" content="https://nail-beauty-atelier-brighton.aymenjallouli.dev/og.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:url" content="https://nail-beauty-atelier-brighton.aymenjallouli.dev/"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://nail-beauty-atelier-brighton.aymenjallouli.dev/og.jpg"><!--/sf:og-->
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="hdr" id="hdr">
+  <div class="wrap hdr__in">
+    <a class="mark" href="#top" aria-label="Nail &amp; Beauty Atelier, back to top">
+      <span class="mark__top">Nail &amp; Beauty</span>
+      <span class="mark__name">Atelier</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a class="draw" href="#reviews">Reviews</a>
+      <a class="draw" href="#treatments">Treatments</a>
+      <a class="draw" href="#colours">Colours</a>
+      <a class="draw" href="#studio">Studio</a>
+      <a class="draw" href="#visit">Visit</a>
+    </nav>
+    <a class="btn btn--solid hdr__cta" href="https://www.treatwell.co.uk/place/nail-beauty-atelier/" target="_blank" rel="noopener">Book on Treatwell
+      <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menu"><span>Menu</span><span class="bars" aria-hidden="true"></span></button>
+  </div>
+</header>
+
+<div class="menu" id="menu" aria-label="Menu">
+  <nav aria-label="Mobile">
+    <ol>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#treatments">Treatments</a></li>
+      <li><a href="#colours">Colours</a></li>
+      <li><a href="#studio">Studio</a></li>
+      <li><a href="#visit">Visit</a></li>
+    </ol>
+  </nav>
+  <div class="menu__foot">
+    <a class="btn btn--solid" href="https://www.treatwell.co.uk/place/nail-beauty-atelier/" target="_blank" rel="noopener">Book on Treatwell</a>
+    <p>15 Montpelier Terrace, Brighton BN1 3DS · Open daily, 9 am – 8 pm</p>
+  </div>
+</div>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero" id="top" aria-labelledby="h1">
+    <div class="wrap grid hero__grid">
+      <p class="eyebrow hero__kicker"><b>Nail studio</b> <span>Montpelier Terrace · Brighton</span></p>
+      <h1 class="hero__title" id="h1"><span class="line"><span>Detail,</span></span><span class="line"><span><em>by Winnie.</em></span></span></h1>
+      <figure class="hero__media" style="margin-inline:0">
+        <div class="hero__frame">
+          <img src="assets/photos/photo-01.jpg" width="1600" height="1200" fetchpriority="high"
+               alt="Short oval nails in glossy oxblood gel, hands crossed, an opal ring on one finger">
+        </div>
+        <a class="hero__badge" href="https://www.google.com/maps/place/?q=place_id:ChIJBd18lmqFdUgRVuks03sJ2UM" target="_blank" rel="noopener" aria-label="Rated 5.0 out of 5 from 106 Google reviews">
+          <span class="num">5.0</span>
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <small>106 Google reviews</small>
+        </a>
+      </figure>
+      <div class="hero__body">
+        <p class="hero__lede">Winnie’s home nail studio in Brighton. BIAB, gel, extensions and hand-painted nail art, finished so precisely that her clients mention it in review after review.</p>
+        <div class="hero__cta">
+          <a class="btn btn--solid" href="https://www.treatwell.co.uk/place/nail-beauty-atelier/" target="_blank" rel="noopener">Book on Treatwell
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          <a class="btn btn--ghost" href="sms:+447922999339?&amp;body=Hello%20Winnie%2C%20I%E2%80%99d%20like%20to%20book%20a%20nail%20appointment.%20Do%20you%20have%20any%20availability%20this%20week%3F">Text Winnie</a>
+        </div>
+        <p class="status" data-status>Open daily, 9 am – 8 pm</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROOF -->
+  <section class="proof inv" id="reviews" aria-labelledby="reviews-h">
+    <div class="wrap grid proof__head">
+      <h2 class="vh" id="reviews-h">What clients say</h2>
+      <div class="proof__score rv">
+        <span class="proof__big" aria-hidden="true">5.0</span>
+        <div class="proof__meta">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <p>Average rating<br>from 106 Google reviews</p>
+        </div>
+      </div>
+      <figure class="proof__quote rv" style="--i:1">
+        <blockquote><p>“Her attention to detail is far superior to every nail technician that I’ve had in the past. I come home feeling rested and really happy with my nails.”</p></blockquote>
+        <figcaption>Natalie G. · ★★★★★</figcaption>
+      </figure>
+      <p class="proof__link rv" style="--i:2"><a class="ulink" href="https://www.google.com/maps/place/?q=place_id:ChIJBd18lmqFdUgRVuks03sJ2UM" target="_blank" rel="noopener">Read all 106 reviews on Google</a></p>
+    </div>
+
+    <div class="rail" tabindex="0" aria-label="Client reviews, scroll sideways">
+      <figure class="review rv">
+        <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+        <blockquote><p>“Winnie was fast but still so careful. She picked a colour that suited me perfectly, and even though my nails are really short, she shaped them beautifully.”</p></blockquote>
+        <cite>yuhan Z.</cite>
+      </figure>
+      <figure class="review rv" style="--i:1">
+        <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+        <blockquote><p>“I get BIAB nails and they never chip and always last for ages. Winnie is also so helpful when it comes to choosing colours that suit me…”</p></blockquote>
+        <cite>Carmel M.</cite>
+      </figure>
+      <figure class="review rv" style="--i:2">
+        <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+        <blockquote><p>“The salon is gorgeous, and it’s so clean and relaxing. The nails last so long and her attention to detail is the best I’ve ever experienced…”</p></blockquote>
+        <cite>Nina S.</cite>
+      </figure>
+      <figure class="review rv" style="--i:3">
+        <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+        <blockquote><p>“Winnie took such care making sure they were perfect and was so kind. She has so many colours and options, and her nail art is incredible.”</p></blockquote>
+        <cite>harriet J.</cite>
+      </figure>
+      <figure class="review rv" style="--i:4">
+        <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+        <blockquote><p>“Honestly, one of the best technicians I’ve ever met in Brighton… The whole experience was lovely, cosy, and so relaxing.”</p></blockquote>
+        <cite>Annie C.</cite>
+      </figure>
+      <figure class="review rv" style="--i:5">
+        <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+        <blockquote><p>“She has an amazing attention to detail and I am so happy with my nails. Every step is done with such professionalism and precision.”</p></blockquote>
+        <cite>Ella F.</cite>
+      </figure>
+    </div>
+  </section>
+
+  <!-- TREATMENTS -->
+  <section class="menu-sec" id="treatments" aria-labelledby="treat-h">
+    <div class="wrap grid menu-sec__grid">
+      <div class="menu-sec__side rv">
+        <p class="eyebrow"><b>01</b> Treatments</p>
+        <h2 id="treat-h">Manicures, BIAB <em>&amp; extensions.</em></h2>
+        <p>Winnie specialises in BIAB, gel, acrylic and hard gel extensions, and detailed nail art. Prices are as listed on Treatwell, where you can see every option and pick a time.</p>
+        <div><a class="btn btn--ghost" href="https://www.treatwell.co.uk/place/nail-beauty-atelier/" target="_blank" rel="noopener">See times on Treatwell
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div>
+      </div>
+
+      <div class="menu-sec__list">
+        <div class="group rv">
+          <h3>Manicures <span>08</span></h3>
+          <ul>
+            <li><span class="n">Children’s Mini Manicure</span><span class="dots"></span><span class="p">£12</span></li>
+            <li><span class="n">Mini Mani</span><span class="dots"></span><span class="p">£15</span></li>
+            <li><span class="n">Classic Manicure</span><span class="dots"></span><span class="p">£23</span></li>
+            <li><span class="n">Gel Manicure</span><span class="dots"></span><span class="p">£26</span></li>
+            <li><span class="n">Luxury Manicure</span><span class="dots"></span><span class="p">£30</span></li>
+            <li><span class="n">Gel Manicure with Removal</span><span class="dots"></span><span class="p">£31</span></li>
+            <li><span class="n">Classic Gel Manicure</span><span class="dots"></span><span class="p">£31</span></li>
+            <li><span class="n">Luxury Gel Manicure</span><span class="dots"></span><span class="p">£36</span></li>
+          </ul>
+        </div>
+        <div class="group rv">
+          <h3>BIAB &amp; extensions <span>04</span></h3>
+          <ul>
+            <li><span class="n">BIAB / Builder Gel</span><span class="dots"></span><span class="p"><small>from</small>£31</span></li>
+            <li><span class="n">BIAB Manicure &amp; Gel Pedicure</span><span class="dots"></span><span class="p">£47</span></li>
+            <li><span class="n">Acrylic Extensions &amp; Infills</span><span class="dots"></span><span class="p"><small>from</small>£8</span></li>
+            <li><span class="n">Hard Gel Extensions &amp; Infills</span><span class="dots"></span><span class="p"><small>from</small>£20</span></li>
+          </ul>
+        </div>
+        <div class="group rv">
+          <h3>Art &amp; packages <span>02</span></h3>
+          <ul>
+            <li><span class="n">Nail Art &amp; Add-ons</span><span class="dots"></span><span class="p"><small>from</small>£1</span></li>
+            <li><span class="n">Packages &amp; Combos</span><span class="dots"></span><span class="p"><small>from</small>£47</span></li>
+          </ul>
+        </div>
+        <p class="menu-sec__note rv">Prices from Treatwell. Brands used: OPI and IBD.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHADE RAIL (signature) -->
+  <section class="shades inv" id="colours" aria-labelledby="shades-h">
+    <div class="wrap grid shades__head">
+      <p class="eyebrow rv" style="grid-column:1/-1"><b>02</b> Recent sets</p>
+      <h2 id="shades-h" class="rv">“So many colours <em>and options.”</em></h2>
+      <p class="rv" style="--i:1">That’s harriet J., one of several clients who mention how Winnie helps them choose a shade that suits them. A few recent sets from the studio:</p>
+      <div class="shades__nav" aria-hidden="false">
+        <button class="navbtn" type="button" data-rail="prev" aria-label="Previous photos"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+        <button class="navbtn" type="button" data-rail="next" aria-label="Next photos"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+      </div>
+    </div>
+    <div class="rail" id="shadeRail" tabindex="0" aria-label="Nail sets, scroll sideways">
+      <figure class="shade rv">
+        <div class="shade__img"><img src="assets/photos/photo-05.jpg" width="1200" height="1600" loading="lazy" decoding="async" style="object-position:50% 60%"
+          alt="Hand-painted nail art: taupe and white polka dots and stars on short almond nails"></div>
+        <figcaption><span>01</span>Dots &amp; stars</figcaption>
+      </figure>
+      <figure class="shade rv" style="--i:1">
+        <div class="shade__img"><img src="assets/photos/photo-13.jpg" width="1200" height="1600" loading="lazy" decoding="async" style="object-position:50% 70%"
+          alt="Short square nails in a milky pearl shade against dark velvet"></div>
+        <figcaption><span>02</span>Milky pearl</figcaption>
+      </figure>
+      <figure class="shade rv" style="--i:2">
+        <div class="shade__img"><img src="assets/photos/photo-11.jpg" width="1200" height="1600" loading="lazy" decoding="async" style="object-position:55% 50%"
+          alt="Square nails with turquoise French tips and hand-painted pink flowers"></div>
+        <figcaption><span>03</span>Turquoise French, painted flowers</figcaption>
+      </figure>
+      <figure class="shade rv" style="--i:3">
+        <div class="shade__img"><img src="assets/photos/photo-07.jpg" width="1347" height="1600" loading="lazy" decoding="async" style="object-position:50% 65%"
+          alt="Matching pale pink French manicure and pedicure, hands resting on feet"></div>
+        <figcaption><span>04</span>French, hands &amp; toes</figcaption>
+      </figure>
+      <figure class="shade rv" style="--i:4">
+        <div class="shade__img"><img src="assets/photos/photo-08.jpg" width="1200" height="1600" loading="lazy" decoding="async" style="object-position:50% 70%"
+          alt="Short rounded nails in a soft lilac gel"></div>
+        <figcaption><span>05</span>Lilac</figcaption>
+      </figure>
+      <figure class="shade rv" style="--i:5">
+        <div class="shade__img"><img src="assets/photos/photo-09.jpg" width="1600" height="1200" loading="lazy" decoding="async" style="object-position:28% 50%"
+          alt="Glossy bright red oval nails, close up"></div>
+        <figcaption><span>06</span>Pillar-box red</figcaption>
+      </figure>
+      <figure class="shade rv" style="--i:6">
+        <div class="shade__img"><img src="assets/photos/photo-14.jpg" width="1600" height="1200" loading="lazy" decoding="async" style="object-position:38% 50%"
+          alt="Classic white French tips on toes, with matching French nails on a tattooed hand"></div>
+        <figcaption><span>07</span>Classic French pedicure</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- STUDIO -->
+  <section class="studio" id="studio" aria-labelledby="studio-h">
+    <div class="wrap grid studio__grid">
+      <figure class="studio__media rv">
+        <div class="frame"><img src="assets/photos/photo-12.jpg" width="1200" height="1600" loading="lazy" decoding="async"
+          alt="A hand with sheer nude nails against pale oak, in a red ribbed jumper"></div>
+        <div class="frame frame--small"><img src="assets/photos/photo-02.jpg" width="1200" height="1600" loading="lazy" decoding="async"
+          alt="Coral shimmer gel on short rounded nails, hands folded on a white towel"></div>
+      </figure>
+      <div class="studio__text">
+        <p class="eyebrow rv"><b>03</b> The studio</p>
+        <h2 id="studio-h" class="rv">A home studio on Montpelier Terrace, <em>run by Winnie.</em></h2>
+        <p class="rv">Nail &amp; Beauty Atelier is Winnie’s own studio in Heather Court on Montpelier Terrace. Clients call it <q>gorgeous</q>, <q>so clean and relaxing</q> and <q>cosy</q>. What she uses, and how to make the visit easy:</p>
+        <ol class="facts">
+          <li class="rv"><strong>Vegan, HEMA-free builder gel</strong><span>100% vegan, carbon-neutral, acid-free builder gels, free of HEMA, Di-HEMA and hydroquinone.</span></li>
+          <li class="rv"><strong>OPI and IBD</strong><span>The brands Winnie works with, in plenty of colours to choose from.</span></li>
+          <li class="rv"><strong>English and Chinese spoken</strong><span>Winnie speaks both fluently.</span></li>
+          <li class="rv"><strong>Free visitor parking</strong><span>Can be arranged during your treatment. Ask in your booking notes or send a message beforehand.</span></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISIT -->
+  <section class="visit" id="visit" aria-labelledby="visit-h">
+    <div class="wrap grid visit__grid">
+      <div class="visit__info">
+        <p class="eyebrow rv"><b>04</b> Hours &amp; address</p>
+        <h2 id="visit-h" class="rv">Open seven days, <em style="white-space:nowrap">9 am to 8 pm.</em></h2>
+        <p class="status rv" data-status>Open daily, 9 am – 8 pm</p>
+        <table class="hours rv" aria-label="Opening hours">
+          <tbody id="hours">
+            <tr data-day="monday"><th scope="row">Monday</th><td>9 am – 8 pm</td></tr>
+            <tr data-day="tuesday"><th scope="row">Tuesday</th><td>9 am – 8 pm</td></tr>
+            <tr data-day="wednesday"><th scope="row">Wednesday</th><td>9 am – 8 pm</td></tr>
+            <tr data-day="thursday"><th scope="row">Thursday</th><td>9 am – 8 pm</td></tr>
+            <tr data-day="friday"><th scope="row">Friday</th><td>9 am – 8 pm</td></tr>
+            <tr data-day="saturday"><th scope="row">Saturday</th><td>9 am – 8 pm</td></tr>
+            <tr data-day="sunday"><th scope="row">Sunday</th><td>9 am – 8 pm</td></tr>
+          </tbody>
+        </table>
+        <address class="visit__addr rv">Flat 23, Heather Court<br>15 Montpelier Terrace<br>Brighton BN1 3DS</address>
+        <p class="note rv"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M10 16V8h3a2.5 2.5 0 0 1 0 5h-3"/></svg>Free visitor parking can be arranged. Mention it in your booking notes or message ahead.</p>
+        <div class="visit__actions rv">
+          <a class="btn btn--solid" href="https://www.google.com/maps/dir/?api=1&amp;destination=Nail%20%26%20Beauty%20Atelier%2C%20Heather%20Court%2C%2015%20Montpelier%20Terrace%2C%20Brighton%20and%20Hove%2C%20Brighton%20BN1%203DS" target="_blank" rel="noopener">
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Directions</a>
+          <a class="btn btn--ghost" href="tel:+447922999339">Call 07922 999339</a>
+        </div>
+      </div>
+      <figure class="visit__map rv">
+        <div class="mapbox">
+          <div class="mapbox__ph" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>15 Montpelier Terrace</span>BN1 3DS</div>
+          <iframe src="https://www.google.com/maps?q=Nail%20%26%20Beauty%20Atelier%2C%20Heather%20Court%2C%2015%20Montpelier%20Terrace%2C%20Brighton%20and%20Hove%2C%20Brighton%20BN1%203DS&amp;output=embed"
+            title="Map: Nail &amp; Beauty Atelier, 15 Montpelier Terrace, Brighton" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <figcaption>Map not loading? <a class="ulink" href="https://www.google.com/maps/place/?q=place_id:ChIJBd18lmqFdUgRVuks03sJ2UM" target="_blank" rel="noopener">Open in Google Maps</a></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact" aria-labelledby="contact-h">
+    <div class="wrap contact__grid">
+      <div class="contact__head">
+        <p class="eyebrow rv"><b>05</b> Book</p>
+        <h2 id="contact-h" class="rv" style="margin-top:var(--space-5)">Your next set, <em>three ways.</em></h2>
+      </div>
+      <ul class="contact__rows">
+        <li class="rv"><a href="https://www.treatwell.co.uk/place/nail-beauty-atelier/" target="_blank" rel="noopener">
+          <span class="k">Online, any time</span><span class="v">Book on Treatwell</span>
+          <span class="arr" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a></li>
+        <li class="rv" style="--i:1"><a href="sms:+447922999339?&amp;body=Hello%20Winnie%2C%20I%E2%80%99d%20like%20to%20book%20a%20nail%20appointment.%20Do%20you%20have%20any%20availability%20this%20week%3F">
+          <span class="k">Send a text</span><span class="v">07922 999339</span>
+          <span class="arr" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></svg></span></a></li>
+        <li class="rv" style="--i:2"><a href="tel:+447922999339">
+          <span class="k">Call the studio</span><span class="v">+44 7922 999339</span>
+          <span class="arr" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1z"/></svg></span></a></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="ftr inv">
+  <div class="wrap grid ftr__grid">
+    <p class="ftr__name">Nail &amp; Beauty Atelier</p>
+    <div class="ftr__col">
+      <p>Flat 23, Heather Court<br>15 Montpelier Terrace, Brighton BN1 3DS</p>
+      <a class="ulink" href="https://www.google.com/maps/dir/?api=1&amp;destination=Nail%20%26%20Beauty%20Atelier%2C%20Heather%20Court%2C%2015%20Montpelier%20Terrace%2C%20Brighton%20and%20Hove%2C%20Brighton%20BN1%203DS" target="_blank" rel="noopener">Directions</a>
+    </div>
+    <div class="ftr__col">
+      <p>Open daily, 9 am – 8 pm</p>
+      <a class="ulink" href="tel:+447922999339">+44 7922 999339</a>
+      <a class="ulink" href="https://www.treatwell.co.uk/place/nail-beauty-atelier/" target="_blank" rel="noopener">Treatwell</a>
+    </div>
+    <p class="ftr__legal"><span>© <span id="year">2026</span> Nail &amp; Beauty Atelier, Brighton</span><span>English and Chinese spoken</span></p>
+  </div>
+</footer>
+
+<nav class="bar" aria-label="Quick actions">
+  <a href="https://www.treatwell.co.uk/place/nail-beauty-atelier/" target="_blank" rel="noopener">
+    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg>Book</a>
+  <a href="sms:+447922999339?&amp;body=Hello%20Winnie%2C%20I%E2%80%99d%20like%20to%20book%20a%20nail%20appointment.%20Do%20you%20have%20any%20availability%20this%20week%3F">
+    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg>Text</a>
+  <a href="tel:+447922999339">
+    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1z"/></svg>Call</a>
+</nav>
+
+<script>
+(function(){
+  var d=document, root=d.documentElement, body=d.body;
+  // Header shrink
+  var hdr=d.getElementById('hdr');
+  var onScroll=function(){hdr.classList.toggle('is-scrolled',scrollY>24)};
+  onScroll(); addEventListener('scroll',onScroll,{passive:true});
+
+  // Menu
+  var btn=d.getElementById('menuBtn'), menu=d.getElementById('menu');
+  function setMenu(open){
+    btn.setAttribute('aria-expanded',open); menu.classList.toggle('is-open',open);
+    body.classList.toggle('is-locked',open); root.classList.toggle('menu-open',open);
+    btn.querySelector('span').textContent=open?'Close':'Menu';
+    if(open) menu.querySelector('a').focus({preventScroll:true});
+  }
+  btn.addEventListener('click',function(){setMenu(btn.getAttribute('aria-expanded')!=='true')});
+  menu.addEventListener('click',function(e){if(e.target.closest('a'))setMenu(false)});
+  d.addEventListener('keydown',function(e){if(e.key==='Escape'&&btn.getAttribute('aria-expanded')==='true'){setMenu(false);btn.focus()}});
+
+  // Reveals
+  var els=d.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px',threshold:.08});
+    els.forEach(function(el){io.observe(el)});
+  } else els.forEach(function(el){el.classList.add('in')});
+
+  // Rail buttons
+  var rail=d.getElementById('shadeRail');
+  d.querySelectorAll('[data-rail]').forEach(function(b){b.addEventListener('click',function(){
+    var w=rail.querySelector('.shade').offsetWidth+16;
+    rail.scrollBy({left:(b.dataset.rail==='next'?1:-1)*w*2,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+  })});
+
+  // Hours + live status (Europe/London)
+  var HOURS={monday:"9 am–8 pm",tuesday:"9 am–8 pm",wednesday:"9 am–8 pm",thursday:"9 am–8 pm",friday:"9 am–8 pm",saturday:"9 am–8 pm",sunday:"9 am–8 pm"};
+  var DAYS=['sunday','monday','tuesday','wednesday','thursday','friday','saturday'];
+  function t(s,suf){
+    var m=s.trim().toLowerCase().match(/^(\d{1,2})(?:[:.h](\d{2}))?\s*(am|pm|a\.m\.|p\.m\.)?$/); if(!m) return null;
+    var h=+m[1], mi=+(m[2]||0), x=(m[3]||suf||'').charAt(0);
+    if(x==='p'&&h<12)h+=12; if(x==='a'&&h===12)h=0; return h*60+mi;
+  }
+  function parse(v){
+    v=(v||'').trim(); if(!v||/closed|fermé/i.test(v)) return [];
+    if(/24\s*h|24 hours|open 24/i.test(v)) return [[0,1440]];
+    return v.split(/\s*[,;]\s*/).map(function(r){
+      var p=r.split(/\s*(?:–|—|-|to)\s*/); if(p.length<2) return null;
+      var es=(p[1].match(/(am|pm)/i)||[])[1], e=t(p[1]), s=t(p[0]);
+      if(s!==null&&!/(am|pm)/i.test(p[0])&&es){var s2=t(p[0],es); if(s2!==null&&s2<e) s=s2;}
+      if(s===null||e===null) return null; if(e<=s) e+=1440; return [s,e];
+    }).filter(Boolean);
+  }
+  function fmt(m){m=m%1440;var h=Math.floor(m/60),mi=m%60,s=h>=12?'pm':'am';h=h%12||12;return h+(mi?':'+String(mi).padStart(2,'0'):'')+' '+s}
+  try{
+    var parts=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/London',weekday:'long',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(new Date());
+    var g=function(k){return (parts.find(function(p){return p.type===k})||{}).value};
+    var di=DAYS.indexOf(g('weekday').toLowerCase()), now=(+g('hour'))*60+(+g('minute'));
+    var row=d.querySelector('[data-day="'+DAYS[di]+'"]'); if(row) row.classList.add('is-today');
+    var open=null, today=parse(HOURS[DAYS[di]]), y=parse(HOURS[DAYS[(di+6)%7]]);
+    today.forEach(function(r){if(now>=r[0]&&now<r[1])open=r[1]});
+    y.forEach(function(r){if(r[1]>1440&&now<r[1]-1440)open=r[1]});
+    var txt, cls;
+    if(open!==null){txt=open-now>=1440?'Open now · 24 hours':'Open now · until '+fmt(open);cls='is-open'}
+    else{
+      cls='is-closed'; txt='Closed';
+      var nx=today.filter(function(r){return r[0]>now})[0];
+      if(nx) txt='Closed · opens at '+fmt(nx[0]);
+      else for(var i=1;i<8;i++){var r=parse(HOURS[DAYS[(di+i)%7]])[0];if(r){txt='Closed · opens '+(i===1?'tomorrow':DAYS[(di+i)%7].replace(/^./,function(c){return c.toUpperCase()}))+' at '+fmt(r[0]);break}}
+    }
+    d.querySelectorAll('[data-status]').forEach(function(el){el.textContent=txt;el.classList.add(cls)});
+  }catch(e){}
+
+  d.getElementById('year').textContent=new Date().getFullYear();
+})();
+</script>
+<!--sf:preview--><div style="padding:18px 16px;font:13px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;text-align:center;background:#0f0f10;color:#a3a3a8">Preview made by Aymen Jallouli for Nail &amp; Beauty Atelier: this is not yet the business's official website.</div><!--/sf:preview-->
+<!--sf:track--><script>(function(){try{var q=new URLSearchParams(location.search),r=q.get('r')||sessionStorage.getItem('sf_r');if(!r)return;sessionStorage.setItem('sf_r',r);navigator.sendBeacon("https://track.aymenjallouli.dev/t"+'?r='+encodeURIComponent(r)+'&p='+encodeURIComponent(location.pathname));}catch(e){}})();</script><!--/sf:track-->
+</body>
+</html>
